@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "582815469852",
+    "firebase_url": "https://hatly-1.firebaseio.com",
+    "project_id": "hatly-1",
+    "storage_bucket": "hatly-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582815469852:android:10f546e6e14cacd2",
+        "android_client_info": {
+          "package_name": "com.example.hemamostafa.hatly_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582815469852-tbggos25d0p72rl5888ofsosk82rm39m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hemamostafa.hatly_1",
+            "certificate_hash": "7f919fab2a9bb40bdbb9e567a91175630aa4a434"
+          }
+        },
+        {
+          "client_id": "582815469852-mm7hv5hphj8p3hq36o9f31mii14gr371.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJs5zRp_XY9eTlHbtZEoECBSg85VLl4x4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582815469852-mm7hv5hphj8p3hq36o9f31mii14gr371.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

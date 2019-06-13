@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReviewPrices"
+    android:background="@color/white">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/mainColor"
+        android:id="@+id/constrainlayout">
+        <ImageView
+            android:id="@+id/arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:tint="@color/white"
+            android:background="@color/mainColor"
+            android:layout_marginStart="10dp"
+
+
+            />
+        <TextView
+            android:id="@+id/review_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Review"
+            android:textSize="18sp"
+            android:fontFamily="@font/rasa_semibold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toBottomOf="@id/constrainlayout"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="15dp"
+        android:padding="2dp"
+        android:id="@+id/profile_cardview"
+        android:background="@drawable/image_border"
+
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/total_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="15dp"
+                android:text="Total Weight"
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"
+                android:fontFamily="@font/rasa_semibold"
+                android:layout_marginTop="30dp"
+                />
+            <TextView
+                android:id="@+id/traveller_fees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/total_weight"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="15dp"
+                android:text="Traveller's Fees "
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"
+                android:fontFamily="@font/rasa_semibold"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:id="@+id/hatly_fees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/traveller_fees"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="15dp"
+                android:text="Hatly Fees"
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"
+                android:fontFamily="@font/rasa_semibold"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rasa_semibold"
+                android:text="Discount"
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hatly_fees" />
+
+
+            <TextView
+                android:id="@+id/total_weight_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/total_weight"
+                android:text="5 Kg"
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"
+                android:layout_marginEnd="35dp"
+                android:fontFamily="@font/rasa_semibold"
+
+                />
+
+            <TextView
+                android:id="@+id/traveller_fees_num"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/rasa_semibold"
+                android:text="35 L.E ~ 45 L.E"
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/traveller_fees"
+
+                />
+            <TextView
+                android:id="@+id/hatly_fees_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/hatly_fees"
+                android:text="15 L.E"
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/rasa_semibold"
+
+                />
+            <TextView
+                android:id="@+id/discount_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/discount"
+                android:text=""
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/rasa_semibold"
+
+                />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+    <Button
+        android:id="@+id/done_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_style"
+        android:text="Done"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_cardview"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="50dp"
+        android:elevation="10dp"
+        />
+
+</android.support.constraint.ConstraintLayout>

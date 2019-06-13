@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangeDealRequest">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayyout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+        <include layout="@layout/custom_toolbar"/>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.constraint.Guideline
+        android:id="@+id/horizentalLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".25"
+        />
+    <TextView
+        android:id="@+id/reccmendation_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommended Range "
+        app:layout_constraintTop_toBottomOf="@id/horizentalLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/rasa_semibold"
+        android:textColor="@color/mainColor"
+        />
+    <TextView
+        android:id="@+id/start_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35 L.E ~ "
+        app:layout_constraintTop_toBottomOf="@id/reccmendation_txtView"
+        app:layout_constraintStart_toStartOf="@id/reccmendation_txtView"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="2dp"
+        android:textSize="16sp"
+        android:textColor="@color/mainColor"
+        android:fontFamily="@font/rasa_bold"
+
+        />
+    <TextView
+        android:id="@+id/end_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="45 L.E"
+        app:layout_constraintTop_toBottomOf="@id/reccmendation_txtView"
+        app:layout_constraintStart_toEndOf="@id/start_range"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:textSize="16sp"
+        android:textColor="@color/mainColor"
+        android:fontFamily="@font/rasa_bold"
+        />
+    <TextView
+        android:id="@+id/price_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/end_range"
+        android:text="Price "
+        android:textSize="20sp"
+        android:fontFamily="@font/rasa_medium"
+        android:textColor="@color/mainColor"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+
+        />
+
+    <EditText
+        android:id="@+id/price_editText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Your Wanted Price"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/edit_text_style"
+        app:layout_constraintTop_toBottomOf="@id/price_txtView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/rasa_semibold"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"/>
+    <Button
+        android:id="@+id/change_deal_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_style"
+        android:text="Change"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/price_editText"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="50dp"
+        />
+</android.support.constraint.ConstraintLayout>

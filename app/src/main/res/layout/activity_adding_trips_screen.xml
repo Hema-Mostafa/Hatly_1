@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddingTripsScreen"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trip_detail_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/trip_detail"
+                android:textSize="20sp"
+                android:fontFamily="@font/rasa_medium"
+                android:textColor="@color/mainColor"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="25dp"
+
+                />
+
+            <AutoCompleteTextView
+                android:id="@+id/to_editT"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="To(Governate,City)"
+                android:textColorHint="@color/hintColor"
+                android:background="@drawable/edit_text_style"
+                app:layout_constraintTop_toBottomOf="@id/trip_detail_txtView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="25dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/rasa_semibold"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+
+                />
+            <AutoCompleteTextView
+                android:id="@+id/from_editT"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="From (Governate,City)"
+                android:textColorHint="@color/hintColor"
+                android:background="@drawable/edit_text_style"
+                app:layout_constraintTop_toBottomOf="@id/to_editT"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/rasa_semibold"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+
+
+
+                />
+
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintGuide_percent=".35"
+                />
+
+            <TextView
+                android:id="@+id/transportionType_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidLine"
+                android:text="@string/transportation_type"
+                android:textSize="20sp"
+                android:fontFamily="@font/rasa_medium"
+                android:textColor="@color/mainColor"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="25dp"
+
+                />
+
+
+
+            <EditText
+                android:id="@+id/weight_editText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Available Weight in kg"
+                android:textColorHint="@color/hintColor"
+                android:background="@drawable/edit_text_style"
+                app:layout_constraintTop_toBottomOf="@id/transportionType_txtView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="25dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/rasa_semibold"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginTop="25dp"
+                android:inputType="number"
+
+
+
+
+                />
+            <TextView
+                android:id="@+id/departure_editT"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Departure (Date,Time)"
+                android:paddingTop="10dp"
+                android:textColorHint="@color/hintColor"
+                android:background="@drawable/edit_text_style"
+                app:layout_constraintTop_toBottomOf="@id/weight_editText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="16sp"
+                android:fontFamily="@font/rasa_semibold"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+
+
+
+
+
+                />
+
+            <Button
+                android:id="@+id/doneBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_style"
+                android:text="Done"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/imagesLayout"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="15dp"
+                />
+            <LinearLayout
+                android:id="@+id/imagesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/departure_editT"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+
+                >
+                <ImageView
+                    android:id="@+id/img_car"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_car_img"
+                    android:layout_weight="1"
+                    android:background="@drawable/img_style"
+                    android:backgroundTint="@color/mainColor"
+                    android:tint="@color/white"
+                    android:layout_margin="5dp"
+                    android:onClick="whenImageSelceted"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/img_train"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/img_style"
+
+                    android:src="@drawable/ic_train"
+                    android:tint="@color/white"
+
+                    />
+                <ImageView
+                    android:id="@+id/img_bus"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_weight="1"
+                    android:background="@drawable/img_style"
+                    android:backgroundTint="@color/mainColor"
+                    android:tint="@color/white"
+                    android:layout_margin="5dp"
+
+                    />
+
+            </LinearLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

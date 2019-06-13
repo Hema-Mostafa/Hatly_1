@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Matching_Shipments"
+    android:orientation="vertical">
+    
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/mainColor"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_back_black"
+                android:tint="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:fitsSystemWindows="true"
+
+
+
+                />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               >
+
+
+
+                <TextView
+                    android:id="@+id/from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cairo"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/rasa_regular"
+
+
+                    />
+
+                <ImageView
+                    android:id="@+id/transportion"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_car_img"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/from"
+                    app:layout_constraintEnd_toStartOf="@id/to"
+                    android:layout_marginTop="30dp"
+                    android:tint="@color/white"
+                    app:layout_collapseMode="pin"
+
+                    />
+                <TextView
+                    android:id="@+id/to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minia"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/rasa_regular"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginTop="40dp"/>
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date : "
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/rasa_regular"
+                    app:layout_constraintTop_toBottomOf="@id/from"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="65dp"
+                    app:layout_constraintEnd_toEndOf="@id/transportion"
+                    android:layout_marginTop="15dp"
+
+
+
+                    />
+                <TextView
+                    android:id="@+id/dateNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10/2/2018"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/rasa_regular"
+                    app:layout_constraintTop_toBottomOf="@id/from"
+                    app:layout_constraintStart_toEndOf="@id/date"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="5dp"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+            <include
+                layout="@layout/mytoolbar"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- Your Scrollable View : Can be Nested Scroll View or Recycler View-->
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <include layout="@layout/item_nested_scrollview"/>
+            <include layout="@layout/item_nested_scrollview"/>
+            <include layout="@layout/item_nested_scrollview"/>
+            <include layout="@layout/item_nested_scrollview"/>
+            <include layout="@layout/item_nested_scrollview"/>
+            <include layout="@layout/item_nested_scrollview"/>
+            <include layout="@layout/item_nested_scrollview"/>
+            <include layout="@layout/item_nested_scrollview"/>
+            <include layout="@layout/item_nested_scrollview"/>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

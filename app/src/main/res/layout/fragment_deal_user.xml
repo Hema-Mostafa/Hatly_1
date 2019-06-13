@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentDealUser"
+    android:background="@color/white">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="2dp"
+        android:id="@+id/cardview_1">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/shipper_img_1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/shipper_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/shipper_name_tr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/shipper_img_1"
+                android:text="HeMa Mostafa"
+                android:textColor="@color/mainColor"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <android.support.v7.widget.AppCompatRatingBar
+                android:id="@+id/shipper_ratingbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/shipper_name_tr"
+                app:layout_constraintStart_toStartOf="@id/shipper_name_tr"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:numStars="5"
+
+                style="?android:attr/ratingBarStyleSmall"
+                android:theme="@style/RatingBar"
+
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                android:isIndicator="true"
+
+                android:stepSize="0.5"
+
+                />
+
+            <Button
+                android:id="@+id/view_profile_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/shipper_name_tr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:text="View Profile"
+                android:background="@drawable/btn_style"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cardview_1"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="2dp"
+
+        android:id="@+id/cardview_2">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/offired_price_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offired Price"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/rasa_semibold"
+                android:textColor="@color/mainColor"
+                />
+            <TextView
+                android:id="@+id/price_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35 L.E "
+                app:layout_constraintTop_toBottomOf="@id/offired_price_textview"
+                app:layout_constraintStart_toStartOf="@id/offired_price_textview"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="16sp"
+                android:textColor="@color/mainColor"
+                android:fontFamily="@font/rasa_bold"
+
+                />
+            <Button
+                android:id="@+id/change__btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/offired_price_textview"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="Change "
+                android:background="@drawable/btn_style"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                />
+            <ImageView
+                android:id="@+id/offer_shipper_accepted_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/offired_price_textview"
+                app:layout_constraintTop_toBottomOf="@id/price_textView"
+                android:src="@drawable/ic_right_sign"
+                android:background="@color/white"
+                android:tint="@color/mainColor"
+                android:layout_marginTop="10dp"
+
+                />
+            <TextView
+                android:id="@+id/offer_shipper_accepted_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offer Accepted From Shipper"
+                app:layout_constraintTop_toBottomOf="@id/price_textView"
+                app:layout_constraintStart_toEndOf="@id/offer_shipper_accepted_sign"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/mainColor"
+                android:fontFamily="@font/rasa_bold"
+
+                />
+            <ImageView
+                android:id="@+id/offer_traveller_accepted_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/offired_price_textview"
+                app:layout_constraintTop_toBottomOf="@id/offer_shipper_accepted_sign"
+                android:src="@drawable/ic_right_sign"
+                android:background="@color/white"
+                android:tint="@color/mainColor"
+                android:layout_marginTop="10dp"
+
+                />
+            <TextView
+                android:id="@+id/offer_traveller_accepted_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offer Accepted From Shipper"
+                app:layout_constraintTop_toBottomOf="@id/offer_shipper_accepted_textview"
+                app:layout_constraintStart_toEndOf="@id/offer_traveller_accepted_sign"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/mainColor"
+                android:fontFamily="@font/rasa_bold"
+
+                />
+            <ImageView
+                android:id="@+id/payment_done_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/offired_price_textview"
+                app:layout_constraintTop_toBottomOf="@id/offer_traveller_accepted_textview"
+                android:src="@drawable/ic_wrong_img"
+                android:background="@color/white"
+                android:tint="@color/mainColor"
+                android:layout_marginTop="10dp"
+
+                />
+            <TextView
+                android:id="@+id/payment_done_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Done"
+                app:layout_constraintTop_toBottomOf="@id/offer_traveller_accepted_textview"
+                app:layout_constraintStart_toEndOf="@id/offer_traveller_accepted_sign"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/mainColor"
+                android:fontFamily="@font/rasa_bold"
+
+                />
+            <ImageView
+                android:id="@+id/shipment_deliverd_to_T_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/offired_price_textview"
+                app:layout_constraintTop_toBottomOf="@id/payment_done_textview"
+                android:src="@drawable/ic_wrong_img"
+                android:background="@color/white"
+                android:tint="@color/mainColor"
+                android:layout_marginTop="10dp"
+
+                />
+            <TextView
+                android:id="@+id/shipment_deliverd_to_T_sign_textV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shipment deliverd to traveller"
+                app:layout_constraintTop_toBottomOf="@id/payment_done_textview"
+                app:layout_constraintStart_toEndOf="@id/offer_traveller_accepted_sign"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/mainColor"
+                android:fontFamily="@font/rasa_bold"
+
+                />
+            <ImageView
+                android:id="@+id/shipment_deliverd_to_D_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/offired_price_textview"
+                app:layout_constraintTop_toBottomOf="@id/shipment_deliverd_to_T_sign"
+                android:src="@drawable/ic_wrong_img"
+                android:background="@color/white"
+                android:tint="@color/mainColor"
+                android:layout_marginTop="10dp"
+
+                />
+            <TextView
+                android:id="@+id/shipment_deliverd_to_D_sign_textV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shipment deliverd to traveller"
+                app:layout_constraintTop_toBottomOf="@id/shipment_deliverd_to_T_sign_textV"
+                app:layout_constraintStart_toEndOf="@id/offer_traveller_accepted_sign"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/mainColor"
+                android:fontFamily="@font/rasa_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="30dp"
+
+                />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <Button
+        android:id="@+id/accept_deal_price__btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cardview_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:text="Accept Deal Price  "
+        android:background="@drawable/btn_style"
+        android:textColor="@color/white"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        />
+
+</android.support.constraint.ConstraintLayout>

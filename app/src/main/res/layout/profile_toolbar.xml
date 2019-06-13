@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/mainColor"
+    tools:showIn="@layout/activity_profile">
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/arrow_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:tint="@color/white"
+        android:background="@color/mainColor"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+
+
+        />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/nav_header_desc"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/shipper_image" />
+
+    <TextView
+        android:id="@+id/your_cuurent_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ibrahim Mostafa"
+        android:textSize="16sp"
+        android:fontFamily="@font/rasa_semibold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+
+        />
+    <android.support.v7.widget.AppCompatRatingBar
+        android:id="@+id/ratting_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/your_cuurent_rate"
+        app:layout_constraintStart_toStartOf="@id/your_cuurent_rate"
+        app:layout_constraintEnd_toEndOf="@id/your_cuurent_rate"
+        android:layout_marginTop="1dp"
+        android:numStars="5"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_marginStart="0dp"
+        android:theme="@style/RatingBar2"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:transformPivotX="0dp"
+        android:transformPivotY="0dp"
+        android:isIndicator="true"
+        android:stepSize="0.5"
+        app:layout_constraintHorizontal_weight="2"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ratting_bar"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="2dp"
+        >
+        <TextView
+            android:id="@+id/num_of_deals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 0 Deals"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/rasa_semibold"
+            android:gravity="center"
+
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/num_of_shipments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 0 Shipments"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/rasa_semibold"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/num_of_trips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 0 Trips"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/rasa_semibold"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.Toolbar>

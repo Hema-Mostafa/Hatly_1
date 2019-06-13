@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DealsAndMatchinTrips"
+    android:background="@color/white">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarCollapsing_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        >
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:contentScrim="@color/mainColor"
+        app:expandedTitleTextAppearance="@android:color/transparent"
+        app:layout_scrollFlags="scroll|enterAlways"
+        android:background="@color/mainColor">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_img_sh"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/mobile_box"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/shipment_weight_tr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/item_img_sh"
+            android:text="Weight : 2 kg"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/rasa_bold"
+            android:textSize="15sp"
+
+            />
+        <TextView
+            android:id="@+id/shipment_name_sh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_img_sh"
+            android:text="Mobile"
+            android:textColor="@color/white"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/rasa_bold"
+            />
+
+        <TextView
+            android:id="@+id/from_txtView_tr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cairo"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/shipment_name_sh"
+            app:layout_constraintStart_toStartOf="@id/shipment_name_sh"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rasa_regular"
+            />
+
+        <ImageView
+            android:id="@+id/transportionTypeImg_tr"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_car_img"
+            app:layout_constraintTop_toBottomOf="@id/shipment_name_sh"
+            app:layout_constraintStart_toEndOf="@id/from_txtView_tr"
+            app:layout_constraintEnd_toStartOf="@id/to_txtView_tr"
+            android:layout_marginTop="5dp"
+            android:background="@color/mainColor"
+            android:tint="@color/white"
+            />
+        <TextView
+            android:id="@+id/to_txtView_tr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minia"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/rasa_regular"
+            app:layout_constraintTop_toBottomOf="@id/shipment_name_sh"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"
+            />
+
+        <TextView
+            android:id="@+id/date_tr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Before Date : "
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/rasa_regular"
+            app:layout_constraintTop_toBottomOf="@id/from_txtView_tr"
+            app:layout_constraintStart_toStartOf="@id/from_txtView_tr"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+
+
+
+            />
+        <TextView
+            android:id="@+id/dateNumber_sh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10/2/2018"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/rasa_regular"
+            app:layout_constraintTop_toBottomOf="@id/from_txtView_tr"
+            app:layout_constraintStart_toEndOf="@id/date_tr"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+
+            />
+
+        <android.support.design.widget.TabLayout
+            app:layout_constraintTop_toBottomOf="@id/date_tr"
+            android:id="@+id/tabs_2"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextColor="@color/white"
+            app:tabMode="fixed"
+            app:tabGravity="fill"/>
+
+    </android.support.constraint.ConstraintLayout>
+    <include layout="@layout/collapsing_toolbar"/>
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+
+
+
+</android.support.design.widget.CoordinatorLayout>

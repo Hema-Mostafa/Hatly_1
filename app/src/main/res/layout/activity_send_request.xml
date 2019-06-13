@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendRequest"
+    android:background="@color/white"
+    android:padding="0dp">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+    <include layout="@layout/custom_toolbar"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="2dp"
+        android:id="@+id/send_cardView"
+        app:layout_constraintTop_toBottomOf="@id/appBar_send">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/from_txtView_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cairo"
+            android:textSize="20sp"
+            android:textColor="@color/mainColor"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rasa_regular"
+
+            />
+
+        <ImageView
+            android:id="@+id/transportionTypeImg_send"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_car_img"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/from_txtView_send"
+            app:layout_constraintEnd_toEndOf="@id/to_txtView_send"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:tint="@color/mainColor"
+
+
+            />
+        <TextView
+            android:id="@+id/to_txtView_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minia"
+            android:textSize="20sp"
+            android:textColor="@color/mainColor"
+            android:textStyle="bold"
+            android:fontFamily="@font/rasa_regular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="10dp"
+
+
+
+            />
+        />
+        <TextView
+            android:id="@+id/dateString_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Before Date : "
+            android:textSize="15sp"
+            android:textColor="@color/hintColor"
+            android:textStyle="bold"
+            android:fontFamily="@font/rasa_regular"
+            app:layout_constraintTop_toBottomOf="@id/from_txtView_send"
+            app:layout_constraintStart_toStartOf="@id/from_txtView_send"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/dateNumber_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10/2/2018"
+            android:textSize="15sp"
+            android:textColor="@color/hintColor"
+            android:fontFamily="@font/rasa_regular"
+            app:layout_constraintTop_toBottomOf="@id/from_txtView_send"
+            app:layout_constraintStart_toEndOf="@id/dateString_send"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            />
+
+        <View
+            android:id="@+id/line_send"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFD2D5DA"
+            app:layout_constraintTop_toBottomOf="@id/dateString_send"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            />
+
+            <ImageView
+                android:id="@+id/boxImg_send"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/box_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_send"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+
+                />
+            <TextView
+                android:id="@+id/kilo_total_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/boxImg_send"
+                android:text=" 4 Kilo"
+                android:textColor="@color/mainColor"
+                app:layout_constraintTop_toBottomOf="@id/line_send"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/rasa_bold"/>
+            <TextView
+                android:id="@+id/Needed_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text=" Needed"
+                android:textColor="@color/mainColor"
+                app:layout_constraintTop_toBottomOf="@id/line_send"
+                android:textSize="20sp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/rasa_bold"/>
+
+            <View
+                android:id="@+id/line_2_send"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFD2D5DA"
+                app:layout_constraintTop_toBottomOf="@id/boxImg_send"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/shipper_img_send"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/shipper_image"
+            app:layout_constraintTop_toBottomOf="@id/line_2_send"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/shipper_name_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/line_2_send"
+                app:layout_constraintStart_toEndOf="@id/shipper_img_send"
+                android:text="HeMa Mostafa"
+                android:textColor="@color/mainColor"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="20sp"
+
+                android:fontFamily="@font/rasa_bold"
+                />
+
+                    <android.support.v7.widget.AppCompatRatingBar
+                        android:id="@+id/shipper_ratingbar_send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/shipper_name_send"
+                        app:layout_constraintStart_toStartOf="@id/shipper_name_send"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
+                        android:numStars="5"
+
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        android:transformPivotX="0dp"
+                        android:transformPivotY="0dp"
+                        android:isIndicator="true"
+                        android:stepSize="0.5"
+                        />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/reccmendation_txtView_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommended Range "
+        app:layout_constraintTop_toBottomOf="@id/send_cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/rasa_semibold"
+        android:textColor="@color/mainColor"
+        />
+    <TextView
+        android:id="@+id/start_range_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35 L.E ~ "
+        app:layout_constraintTop_toBottomOf="@id/reccmendation_txtView_send"
+        app:layout_constraintStart_toStartOf="@id/reccmendation_txtView_send"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="2dp"
+        android:textSize="16sp"
+        android:textColor="@color/mainColor"
+        android:fontFamily="@font/rasa_bold"
+
+        />
+    <TextView
+        android:id="@+id/end_range_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="45 L.E"
+        app:layout_constraintTop_toBottomOf="@id/reccmendation_txtView_send"
+        app:layout_constraintStart_toEndOf="@id/start_range_send"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:textSize="16sp"
+        android:textColor="@color/mainColor"
+        android:fontFamily="@font/rasa_bold"
+        />
+    <TextView
+        android:id="@+id/price_txtView_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/end_range_send"
+        android:text="Price "
+        android:textSize="20sp"
+        android:fontFamily="@font/rasa_medium"
+        android:textColor="@color/mainColor"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+
+        />
+
+    <EditText
+        android:id="@+id/price_editText_send"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Your Wanted Price"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/edit_text_style"
+        app:layout_constraintTop_toBottomOf="@id/price_txtView_send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/rasa_semibold"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+
+        />
+    <TextView
+        android:id="@+id/message_txtView_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/price_editText_send"
+        android:text="Message"
+        android:textSize="20sp"
+        android:fontFamily="@font/rasa_medium"
+        android:textColor="@color/mainColor"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+
+        />
+
+    <EditText
+        android:id="@+id/message_editText_send"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Send Your Welcom Message )"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/edit_text_style"
+        app:layout_constraintTop_toBottomOf="@id/message_txtView_send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/rasa_semibold"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+
+        />
+    <Button
+        android:id="@+id/sendReuest_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_style"
+        android:text="Send"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/message_editText_send"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="50dp"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

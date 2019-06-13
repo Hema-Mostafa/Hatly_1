@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="7dp"
+    app:cardCornerRadius="25dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginTop="5dp"
+    android:padding="2dp"
+    android:id="@+id/shipments_cardview">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_img_sh"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mobile_box"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/shipment_weight_tr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/item_img_sh"
+            android:text="Weight : 2 kg"
+            android:textColor="@color/mainColor"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:fontFamily=""
+            android:textSize="15sp"
+
+            />
+        <TextView
+            android:id="@+id/shipment_name_sh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_img_sh"
+            android:text="Mobile"
+            android:textColor="@color/mainColor"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/rasa_regular"
+
+
+
+
+            />
+        <ImageView
+            android:id="@+id/arrow_sh"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_arrow_drop_down_img"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:tint="@color/mainColor"
+
+
+
+            />
+        <TextView
+            android:id="@+id/from_txtView_tr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cairo"
+            android:textSize="20sp"
+            android:textColor="@color/mainColor"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/shipment_name_sh"
+            app:layout_constraintStart_toStartOf="@id/shipment_name_sh"
+
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/rasa_regular"
+
+
+            />
+
+        <ImageView
+            android:id="@+id/transportionTypeImg_tr"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_car_img"
+            app:layout_constraintTop_toBottomOf="@id/shipment_name_sh"
+            app:layout_constraintStart_toEndOf="@id/from_txtView_tr"
+            app:layout_constraintEnd_toStartOf="@id/to_txtView_tr"
+
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:tint="@color/mainColor"
+
+
+            />
+        <TextView
+            android:id="@+id/to_txtView_tr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minia"
+            android:textSize="20sp"
+            android:textColor="@color/mainColor"
+            android:textStyle="bold"
+            android:fontFamily="@font/rasa_regular"
+            app:layout_constraintTop_toBottomOf="@id/shipment_name_sh"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"
+
+
+
+            />
+        />
+        <TextView
+            android:id="@+id/date_tr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Before Date : "
+            android:textSize="16sp"
+            android:textColor="@color/hintColor"
+            android:textStyle="bold"
+            android:fontFamily="@font/rasa_bold"
+            app:layout_constraintTop_toBottomOf="@id/from_txtView_tr"
+            app:layout_constraintStart_toStartOf="@id/from_txtView_tr"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="15dp"
+
+
+
+            />
+        <TextView
+            android:id="@+id/dateNumber_sh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10/2/2018"
+            android:textSize="16sp"
+            android:textColor="@color/hintColor"
+            android:fontFamily="@font/rasa_bold"
+            app:layout_constraintTop_toBottomOf="@id/from_txtView_tr"
+            app:layout_constraintStart_toEndOf="@id/date_tr"
+           app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="15dp"
+
+
+
+            />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

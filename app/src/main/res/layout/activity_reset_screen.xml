@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResetScreen"
+    android:background="@drawable/background_image">
+        <android.support.constraint.Guideline
+            android:id="@+id/horizentalGL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".42"
+            />
+        <android.support.design.widget.TextInputLayout
+
+            android:id="@+id/textInputLayoutEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/horizentalGL"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="0dp"
+            app:hintTextAppearance="@style/HintText"
+            >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#fff"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="10dp"
+                    android:hint="Email"
+                    android:textColorHint="@color/white"
+                    />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/resetBtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_style"
+            android:text="Reset password"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmail"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="50dp"
+            />
+
+</android.support.constraint.ConstraintLayout>
