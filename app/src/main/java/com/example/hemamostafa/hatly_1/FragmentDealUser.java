@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.hemamostafa.hatly_1.Base.MyBaseFragment;
 
@@ -18,7 +20,9 @@ import com.example.hemamostafa.hatly_1.Base.MyBaseFragment;
  */
 public class FragmentDealUser extends Fragment {
 
-Button changePrice,viewProfile;
+Button changePrice,viewProfile,accept_deal_price__btn;
+ImageView img_1 , img_2 , imageViewAccept;
+TextView textView_1 , textView_2;
 View view;
     public FragmentDealUser() {
         // Required empty public constructor
@@ -30,7 +34,6 @@ View view;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view =inflater.inflate(R.layout.fragment_deal_user, container, false);
-
         changePrice=view.findViewById(R.id.change__btn);
         viewProfile=view.findViewById(R.id.view_profile_btn);
 
@@ -47,7 +50,6 @@ View view;
                 startActivity(new Intent(getContext(),Profile.class));
             }
         });
-
 
 
 

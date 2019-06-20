@@ -3,14 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentMatchingShipments"
-
+    tools:context=".BlankFragment_1"
     android:paddingBottom="20dp">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/match_shipments_reecycler_view_"
+        android:id="@+id/match_shipments_reecycler_view_blank"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         ></android.support.v7.widget.RecyclerView>
+
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>

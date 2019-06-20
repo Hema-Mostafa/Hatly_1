@@ -52,11 +52,12 @@ public class MyTripsAdpter extends RecyclerView.Adapter<MyTripsAdpter.ViewHolder
 
         viewHolder.fromTextView.setText(item.getFrom());
         viewHolder.toTextView.setText(item.getTo());
-        viewHolder.dateString.setText("Data :");
+        viewHolder.dateString.setText("Data : ");
         viewHolder.dateNumber.setText(item.getDate());
-        viewHolder.weightString.setText("Weight :");
+        viewHolder.weightString.setText("Weight:  ");
         viewHolder.weightNumber.setText(item.getWeight());
         viewHolder.arrow.setImageResource(R.drawable.ic_arrow_drop_down_img);
+
         if(item.getTransportationType().equals("car")) {
             viewHolder.transportaionImg.setImageResource(R.drawable.ic_car_img);
         }

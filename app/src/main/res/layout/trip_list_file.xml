@@ -8,7 +8,8 @@
     app:cardCornerRadius="25dp"
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
-    android:layout_marginTop="5dp">
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="3dp">
 
 
 
@@ -140,11 +141,11 @@
             android:text=" 5 "
             android:textSize="20sp"
             android:textColor="@color/mainColor"
-           android:fontFamily="@font/rasa_regular"
+            android:fontFamily="@font/rasa_semibold"
             app:layout_constraintTop_toBottomOf="@id/dateNumber_sh"
             app:layout_constraintStart_toEndOf="@id/from_txtView_tr"
             app:layout_constraintEnd_toStartOf="@id/transportionTypeImg_tr"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="10dp"

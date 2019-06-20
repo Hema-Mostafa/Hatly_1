@@ -12,27 +12,26 @@ import com.example.hemamostafa.hatly_1.Model.Shipment;
 public class Profile extends MyBaseActivity {
 
 
-    private Shipment myShipment,myReceivedShipment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        myReceivedShipment=(Shipment)getIntent().getExtras().getSerializable("myShipment");
-        Toast.makeText(activity,myReceivedShipment.getItemList().get(0).getQuantity()+ "/"+ myReceivedShipment.getItemList().size(),Toast.LENGTH_SHORT).show();
+        //myReceivedShipment=(Shipment)getIntent().getExtras().getSerializable("myShipment");
+        //Toast.makeText(activity,myReceivedShipment.getItemList().get(0).getQuantity()+ "/"+ myReceivedShipment.getItemList().size(),Toast.LENGTH_SHORT).show();
 
 
 
 
     }
 
-
+// This Function Not needed Again
+/*
     public void hema(View view) {
         Intent intent=new Intent(Profile.this,AddingShipmentDetails.class);
        intent.putExtra("hema",myReceivedShipment);
        intent.putExtra("Uniqid","profile");
 
         startActivity(intent);
-    }
+    }*/
 }

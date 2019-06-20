@@ -58,7 +58,7 @@ public class MatchingShipmentAdapter extends RecyclerView.Adapter<MatchingShipme
         viewHolder.transportaionImg.setImageResource(R.drawable.ic_car_img);
         viewHolder.shipperImage.setImageResource(R.drawable.shipper_image);
         viewHolder.shippmentImage.setImageResource(R.drawable.mobile_box);
-        //viewHolder.ratingBar.se
+
 
 
         if(onButtonClickListener != null){
@@ -87,6 +87,7 @@ public class MatchingShipmentAdapter extends RecyclerView.Adapter<MatchingShipme
         TextView  shipperNameTextView;
         AppCompatRatingBar ratingBar;
         ImageView transportaionImg,shippmentImage,shipperImage ;
+
         CardView cardView;
         Button sendRequestBtn;
 
@@ -101,15 +102,13 @@ public class MatchingShipmentAdapter extends RecyclerView.Adapter<MatchingShipme
            this.beforDateTextView= parent.findViewById(R.id.dateNumber_sh);
            this.shipmentWeightTextView = parent.findViewById(R.id.shipment_weight_tr);
            this.shipmentNameTextView = parent.findViewById(R.id.shipment_name_sh);
-           this.shipperNameTextView=parent.findViewById(R.id.shipper_name_tr);
+           this.shipperNameTextView=parent.findViewById(R.id.shipper_name_tr_);
            this.shipperImage= parent.findViewById(R.id.shipper_img_1);
            this.shippmentImage= parent.findViewById(R.id.item_img_sh);
            this.transportaionImg=parent.findViewById(R.id.transportionTypeImg_tr);
-          // this.ratingBar=parent.findViewById(R.id.shipper_ratingbar);
-            this.sendRequestBtn=parent.findViewById(R.id.send_request_btn);
-
-
-            this.cardView = parent.findViewById(R.id.match_shipments_cardview);
+           this.ratingBar=parent.findViewById(R.id.shipper_ratingbar_);
+           this.sendRequestBtn=parent.findViewById(R.id.send_request_btn);
+           this.cardView = parent.findViewById(R.id.match_shipments_cardview);
 
         }
     }

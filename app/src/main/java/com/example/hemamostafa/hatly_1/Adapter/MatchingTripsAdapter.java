@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.hemamostafa.hatly_1.Model.DummyClass;
 import com.example.hemamostafa.hatly_1.Model.Trip;
+import com.example.hemamostafa.hatly_1.Model.TripDummyClass;
 import com.example.hemamostafa.hatly_1.R;
 
 import java.util.ArrayList;
@@ -21,13 +22,14 @@ public class MatchingTripsAdapter extends RecyclerView.Adapter<MatchingTripsAdap
 
 
 
-    ArrayList<Trip> arrayList;
+    ArrayList<TripDummyClass> arrayList;
     OnItemClickListenerInterface onButtonClickListener ;
 
 
-    public MatchingTripsAdapter(ArrayList<Trip> arrayList) {
+    public MatchingTripsAdapter(ArrayList<TripDummyClass> arrayList) {
         this.arrayList = arrayList;
     }
+
     public void setOnButtonClickListener(OnItemClickListenerInterface onButtonClickListener) {
         this.onButtonClickListener = onButtonClickListener;
     }
@@ -45,14 +47,14 @@ public class MatchingTripsAdapter extends RecyclerView.Adapter<MatchingTripsAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
-        final Trip tripItem = arrayList.get(position);
+        final TripDummyClass tripItem = arrayList.get(position);
 
         viewHolder.fromTextView.setText(tripItem.getFrom());
         viewHolder.toTextView.setText(tripItem.getTo());
 
-        viewHolder.dateStringTextView.setText("Before Date : " +tripItem.getDate());
+        viewHolder.dateStringTextView.setText("Date : " +tripItem.getDate());
         viewHolder.shipmentWeightTextView.setText("Weight :"+ tripItem.getWeight()+" KG ");
-        viewHolder.shipperNameTextView.setText("HeMa Mostafa"); // data from User Model
+        viewHolder.shipperNameTextView.setText(tripItem.getTraveller_name()); // data from User Model
 
         viewHolder.transportaionImg.setImageResource(R.drawable.ic_car_img);
         viewHolder.shipperImage.setImageResource(R.drawable.shipper_image);
@@ -108,7 +110,7 @@ public class MatchingTripsAdapter extends RecyclerView.Adapter<MatchingTripsAdap
         }
     }
     public static  interface OnItemClickListenerInterface{
-        void onClick(int position, Trip trip);
+        void onClick(int position, TripDummyClass trip);
     }
 
 

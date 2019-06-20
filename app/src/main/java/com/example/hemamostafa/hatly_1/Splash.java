@@ -5,6 +5,9 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Splash extends AppCompatActivity {
 
     @Override
@@ -13,12 +16,23 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
 
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(Splash.this,Matching_Shipments.class));
+
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    startActivity(new Intent(Splash.this,MyNewHome.class));
+                } else {
+                    // No user is signed in
+                    startActivity(new Intent(Splash.this,LoginScreen.class));
+                }
 
             }
-        },3000);
+        },1500);
+
     }
 }

@@ -2,11 +2,8 @@ package com.example.hemamostafa.hatly_1;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.ImageViewCompat;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,14 +19,12 @@ import android.widget.Toast;
 import com.example.hemamostafa.hatly_1.Base.MyBaseActivity;
 import com.example.hemamostafa.hatly_1.Model.DataHolder;
 import com.example.hemamostafa.hatly_1.Model.Trip;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -50,6 +45,8 @@ public class AddingTripsScreen extends MyBaseActivity implements View.OnClickLis
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private DataHolder dataHolder;
+
+
 
     ArrayList<Trip> tripArrayList;
     ArrayAdapter<String> adapterAutoComplete;
@@ -104,8 +101,6 @@ public class AddingTripsScreen extends MyBaseActivity implements View.OnClickLis
             to.requestFocus();
             return false;
 
-
-
         }
         else{
             boolean existDistination=false;
@@ -137,8 +132,8 @@ public class AddingTripsScreen extends MyBaseActivity implements View.OnClickLis
                 }
             }
             if (existSource == false){
-                to.setError("in-valid Place Source");
-                to.requestFocus();
+                from.setError("in-valid Place Source");
+                from.requestFocus();
                 return false;
 
             }
@@ -179,7 +174,7 @@ public class AddingTripsScreen extends MyBaseActivity implements View.OnClickLis
         to=findViewById(R.id.to_editT);
         from=findViewById(R.id.from_editT);
         weight=findViewById(R.id.weight_editText);
-        date=findViewById(R.id.departure_editT);
+        date=findViewById(R.id.departure_editT_search);
         done_btn=findViewById(R.id.doneBtn);
 
         //view setOnClickListenr
@@ -297,6 +292,7 @@ public class AddingTripsScreen extends MyBaseActivity implements View.OnClickLis
     }
 
     public void WriteNewTrip(){
+        ShowProgressBar();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         Log.e("user",currentUser.getUid());
@@ -306,7 +302,16 @@ public class AddingTripsScreen extends MyBaseActivity implements View.OnClickLis
         mTrip.setTrip(trip_id);
         mTrip.setCreator_id(currentUser.getUid());
 
-        mDatabase.child("trips").child(trip_id).setValue(mTrip);
+        mDatabase.child("trips").child(trip_id).setValue(mTrip).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(activity,"Trip Added Succesfully",Toast.LENGTH_SHORT).show();
+                    HideProgressBar();
+                    startActivity(new Intent(activity,MyNewHome.class));
+                }
+            }
+        });
 
     }
 }

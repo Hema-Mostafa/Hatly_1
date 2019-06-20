@@ -65,8 +65,6 @@ public class    AddingShipmentDetails extends MyBaseActivity implements View.OnC
     private DataHolder dataHolder;
     private ArrayAdapter<String> adapterAutoComplete;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -102,9 +100,6 @@ public class    AddingShipmentDetails extends MyBaseActivity implements View.OnC
                 // Hide REcycler View
                 //Hide Button
             }
-
-
-
         }
         else {
             Toast.makeText(activity,"Intent IS Null",Toast.LENGTH_SHORT).show();
@@ -343,11 +338,7 @@ public class    AddingShipmentDetails extends MyBaseActivity implements View.OnC
             myReceivedShipment.setShipmentPhoto(myReceivedShipment.getItemList().get(0).getItem_photo());
 
             Toast.makeText(activity,myReceivedShipment.getShipmentWeight(),Toast.LENGTH_SHORT).show();
-            FirebaseUser currentUser = mAuth.getCurrentUser();
 
-            String shipment_id=mDatabase.push().getKey();
-            myReceivedShipment.setShipment_id(shipment_id);
-            myReceivedShipment.setCreator_id(currentUser.getUid());
 
 
             // The Block of this Code to Upload image in Firebase Storage then take Url of it to store in RealtimeDatabase
@@ -370,14 +361,37 @@ public class    AddingShipmentDetails extends MyBaseActivity implements View.OnC
                                 if (task.isSuccessful()) {
                                     Uri downloadUri = task.getResult();
                                     myReceivedShipment.setShipmentPhoto(String.valueOf(downloadUri));
+                                    FirebaseUser currentUser = mAuth.getCurrentUser();
+
+                                    String shipment_id=mDatabase.push().getKey();
+                                    myReceivedShipment.setShipment_id(shipment_id);
+                                    myReceivedShipment.setCreator_id(currentUser.getUid());
+                                    startActivity(new Intent(AddingShipmentDetails.this,MyNewHome.class));
+
                                     Toast.makeText(activity," GET URL Image Succesfully ",Toast.LENGTH_SHORT).show();
-                        Toast.makeText(activity,downloadUri.toString(),Toast.LENGTH_SHORT).show();
-                        Log.e("img",String.valueOf(downloadUri));
-                    } else {
+                                    Toast.makeText(activity,downloadUri.toString(),Toast.LENGTH_SHORT).show();
+                                    Log.e("img",String.valueOf(downloadUri));
+
+
+                                    mDatabase.child("shipments").child(shipment_id).setValue(myReceivedShipment).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+
+                                                Toast.makeText(activity," GET URL Image Succesfully ",Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(activity,"Write Operation is done",Toast.LENGTH_SHORT).show();
+
+                                            } else {
+                                                Toast.makeText(activity,"Write Operation is Failed",Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+
+                                } else {
                         // Handle failures
-                        Toast.makeText(activity,"The Error in GET URL Image to ",Toast.LENGTH_SHORT).show();
+                                     Toast.makeText(activity,"The Error in GET URL Image to ",Toast.LENGTH_SHORT).show();
                         // ...
-                    }
+                          }
                 }
             });
 
@@ -456,17 +470,6 @@ public class    AddingShipmentDetails extends MyBaseActivity implements View.OnC
                 }
             }) ; */
 
-            mDatabase.child("shipments").child(shipment_id).setValue(myReceivedShipment).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(activity,"Write Operation is done",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddingShipmentDetails.this,MyNewHome.class));
-                    } else {
-                        Toast.makeText(activity,"Write Operation is Failed",Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
 
 
 

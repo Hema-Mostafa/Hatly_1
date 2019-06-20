@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DealsAndMatchshipments">
-
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarCollapsing_2"
@@ -23,6 +23,7 @@
             android:background="@color/mainColor">
 
             <ImageView
+                android:id="@+id/arrow_back_"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_arrow_back_black"
@@ -37,7 +38,8 @@
                 android:layout_height="match_parent"
                 >
                 <TextView
-                    android:id="@+id/from"
+                    android:id="@+id/from_source"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cairo"
@@ -52,20 +54,22 @@
                     />
 
                 <ImageView
-                    android:id="@+id/transportion"
+                    android:id="@+id/transportationTripImage"
+
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ic_car_img"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/from"
-                    app:layout_constraintEnd_toStartOf="@id/to"
+                    app:layout_constraintStart_toEndOf="@id/from_source"
+                    app:layout_constraintEnd_toStartOf="@id/to_distination"
                     android:layout_marginTop="30dp"
                     android:tint="@color/white"
                     app:layout_collapseMode="pin"
 
                     />
                 <TextView
-                    android:id="@+id/to"
+                    android:id="@+id/to_distination"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Minia"
@@ -78,7 +82,8 @@
                     android:layout_marginEnd="50dp"
                     android:layout_marginTop="40dp"/>
                 <TextView
-                    android:id="@+id/date"
+                    android:id="@+id/date_trip"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Date : "
@@ -86,16 +91,17 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:fontFamily="@font/rasa_regular"
-                    app:layout_constraintTop_toBottomOf="@id/from"
+                    app:layout_constraintTop_toBottomOf="@id/from_source"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="65dp"
                     android:layout_marginBottom="10dp"
-                    app:layout_constraintEnd_toEndOf="@id/transportion"
+                    app:layout_constraintEnd_toEndOf="@id/transportationTripImage"
                     android:layout_marginTop="15dp"
 
                     />
                 <TextView
-                    android:id="@+id/dateNum"
+                    android:id="@+id/date_trip_num"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10/2/2018"
@@ -103,14 +109,14 @@
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:fontFamily="@font/rasa_regular"
-                    app:layout_constraintTop_toBottomOf="@id/from"
-                    app:layout_constraintStart_toEndOf="@id/date"
+                    app:layout_constraintTop_toBottomOf="@id/from_source"
+                    app:layout_constraintStart_toEndOf="@id/date_trip"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="5dp"
                     />
                 <android.support.design.widget.TabLayout
-                    app:layout_constraintTop_toBottomOf="@id/dateNum"
+                    app:layout_constraintTop_toBottomOf="@id/date_trip_num"
                     android:id="@+id/tabs_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -121,9 +127,6 @@
 
             </android.support.constraint.ConstraintLayout>
             <include layout="@layout/collapsing_toolbar"/>
-
-
-
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -136,4 +139,4 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
 
 
-</android.support.design.widget.CoordinatorLayout>
+</android.support.constraint.ConstraintLayout>

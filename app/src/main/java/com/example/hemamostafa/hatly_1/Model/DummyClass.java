@@ -1,6 +1,8 @@
 package com.example.hemamostafa.hatly_1.Model;
 
-public class DummyClass {
+import java.io.Serializable;
+
+public class DummyClass implements Serializable {
     String to;
     String from;
     String transportationType;
@@ -11,6 +13,10 @@ public class DummyClass {
     String shipper_photo;
     String shipper_name;
     String shipper_rate;
+
+
+    public DummyClass() {
+    }
 
     public DummyClass(String to, String from, String transportationType, String date, String creator_id, String shipment_name,
                       String total_weight, String shipper_photo, String shipper_name, String shipper_rate) {

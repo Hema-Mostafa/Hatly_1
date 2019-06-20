@@ -19,15 +19,13 @@ import android.widget.Toast;
 
 import com.example.hemamostafa.hatly_1.Base.MyBaseActivity;
 import com.example.hemamostafa.hatly_1.Model.Trip;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MyNewHome extends MyBaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
-
     Fragment fragment;
     FloatingActionButton fab;
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -172,13 +170,22 @@ public class MyNewHome extends MyBaseActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_view_profile) {
-            // Handle the camera action
-            startActivity(new Intent(activity,Profile.class));
+          Toast.makeText(activity,"View Profile",Toast.LENGTH_SHORT).show();
+          startActivity(new Intent(activity,Profile.class));
         } else if (id == R.id.nav_payout_details) {
+            Intent intent = new Intent(activity, Test.class);
+            intent.putExtra("Uniqid_2","MyNewHome");
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(activity,"You are Signed out",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(activity,LoginScreen.class));
 
         } else if (id == R.id.nav_setting) {
+            Intent intent = new Intent(activity, DealsAndMatchinTrips.class);
+            intent.putExtra("Uniqid_3","MyNewHome");
+            startActivity(intent);
 
 
         }

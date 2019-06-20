@@ -54,10 +54,11 @@ public class MyShipmentAdpter extends RecyclerView.Adapter<MyShipmentAdpter.View
         viewHolder.toTextView.setText(item.getTo());
         viewHolder.dateString.setText("Data :");
         viewHolder.dateNumber.setText(item.getBeforeDate());
-        viewHolder.weight.setText("Weight :2 kg"); // this is an error here
+        viewHolder.weight.setText(item.getShipmentWeight()+" Kg");
         viewHolder.arrow.setImageResource(R.drawable.ic_arrow_drop_down_img);
         viewHolder.transportaionImg.setImageResource(R.drawable.ic_car_img);
         viewHolder.shipmentName.setText(item.getShipmentName());
+
         viewHolder.shipmentPhoto.setImageResource(R.drawable.mobile_box);
 
 

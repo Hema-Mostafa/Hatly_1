@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.hemamostafa.hatly_1.Model.Deal;
 import com.example.hemamostafa.hatly_1.Model.Shipment;
 import com.example.hemamostafa.hatly_1.R;
 
@@ -20,10 +21,10 @@ public class DealsTripAdapter extends RecyclerView.Adapter<DealsTripAdapter.View
 
 
 
-    ArrayList<Shipment> arrayList;
+    ArrayList<Deal> arrayList;
     OnItemClickListenerInterface onButtonClickListener ;
 
-    public DealsTripAdapter(ArrayList<Shipment> arrayList) {
+    public DealsTripAdapter(ArrayList<Deal> arrayList) {
         this.arrayList = arrayList;
     }
 
@@ -44,16 +45,16 @@ public class DealsTripAdapter extends RecyclerView.Adapter<DealsTripAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
-        final Shipment shipmentItem = arrayList.get(position);
+        final Deal dealItem = arrayList.get(position);
 
-        viewHolder.fromTextView.setText(shipmentItem.getFrom());
-        viewHolder.toTextView.setText(shipmentItem.getTo());
+        viewHolder.fromTextView.setText(dealItem.getSource());
+        viewHolder.toTextView.setText(dealItem.getDistination());
         viewHolder.dateStringTextView.setText("Data :");
-        viewHolder.dateNumberTextView.setText(shipmentItem.getBeforeDate());
+        viewHolder.dateNumberTextView.setText(dealItem.getDate());
 
-        viewHolder.shipperNameTextView.setText("HeMa Mostafa"); // Data From User Model
-        viewHolder.shipmentNameTextView.setText(shipmentItem.getShipmentName());
-        viewHolder.shipmentWeightsTextView.setText("2 KG only"); // go to Shipment Class and modify constructor
+        viewHolder.shipperNameTextView.setText("Shipper Name "); // Data From User Model
+        viewHolder.shipmentNameTextView.setText(dealItem.getShipmentName());
+        viewHolder.shipmentWeightsTextView.setText(dealItem.getWeight() +" KG only"); // go to Shipment Class and modify constructor
         viewHolder.transportaionImg.setImageResource(R.drawable.ic_car_img);
         viewHolder.shipperImage.setImageResource(R.drawable.shipper_image);
         viewHolder.boxImage.setImageResource(R.drawable.box_icon);
@@ -62,7 +63,7 @@ public class DealsTripAdapter extends RecyclerView.Adapter<DealsTripAdapter.View
             viewHolder.requesPriceBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onButtonClickListener.onClick(position,shipmentItem);
+                    onButtonClickListener.onClick(position,dealItem);
                 }
             });
         }
@@ -111,7 +112,7 @@ public class DealsTripAdapter extends RecyclerView.Adapter<DealsTripAdapter.View
         }
     }
     public static  interface OnItemClickListenerInterface{
-        void onClick(int position, Shipment shipment);
+        void onClick(int position, Deal deal);
     }
 
 

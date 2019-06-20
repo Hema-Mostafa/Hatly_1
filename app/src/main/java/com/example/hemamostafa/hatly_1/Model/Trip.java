@@ -1,6 +1,8 @@
 package com.example.hemamostafa.hatly_1.Model;
 
-public class Trip {
+import java.io.Serializable;
+
+public class Trip implements Serializable {
 
     String creator_id;
     String date;

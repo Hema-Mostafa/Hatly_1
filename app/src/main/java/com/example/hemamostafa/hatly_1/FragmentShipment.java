@@ -18,6 +18,7 @@ import com.example.hemamostafa.hatly_1.Adapter.MyShipmentAdpter;
 import com.example.hemamostafa.hatly_1.Base.MyBaseFragment;
 import com.example.hemamostafa.hatly_1.Model.Shipment;
 import com.example.hemamostafa.hatly_1.Model.Trip;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +37,7 @@ public class FragmentShipment extends MyBaseFragment {
     LinearLayoutManager linearLayoutManager;
     MyShipmentAdpter myShipmentAdpter;
     View view;
+    private FirebaseAuth mAuth;
     ArrayList<Shipment> mShipmentArrayList;
     private DatabaseReference mDatabase;
     private ValueEventListener valueEventListener;
@@ -55,6 +57,7 @@ public class FragmentShipment extends MyBaseFragment {
        recyclerView= view.findViewById(R.id.recyclerView_shipFragment);
        linearLayoutManager = new LinearLayoutManager(activity);
        mShipmentArrayList= new ArrayList<>();
+        mAuth=FirebaseAuth.getInstance();
 
        //addShipment();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("shipments");
@@ -65,7 +68,14 @@ public class FragmentShipment extends MyBaseFragment {
                 for (DataSnapshot shipmentSnapshot : dataSnapshot.getChildren()) {
                     Shipment shipment = shipmentSnapshot.getValue(Shipment.class);
                     //Toast.makeText(activity, trip.toString(), Toast.LENGTH_SHORT).show();
-                    mShipmentArrayList.add(shipment);
+                    if(shipment.getCreator_id().equals(mAuth.getUid())){
+                        // Show the Only Shipment of the Current User
+                        mShipmentArrayList.add(shipment);
+                    }
+                    else
+                        continue;
+
+
                 }
                 recyclerView.setLayoutManager(linearLayoutManager);
                 myShipmentAdpter= new MyShipmentAdpter(mShipmentArrayList);
@@ -80,7 +90,12 @@ public class FragmentShipment extends MyBaseFragment {
                 myShipmentAdpter.setOnCardViewClickListener(new MyShipmentAdpter.OnItemClickListenerInterface() {
                     @Override
                     public void onClick(int position, Shipment shipment) {
-                        startActivity(new Intent(activity,DealsAndMatchinTrips.class));
+
+
+                        Intent intent = new Intent(activity, DealsAndMatchinTrips.class);
+                        intent.putExtra("shipment",shipment);
+                        intent.putExtra("Uniqid_3","FragmentShipments");
+                        startActivity(intent);
                     }
                 });
             }

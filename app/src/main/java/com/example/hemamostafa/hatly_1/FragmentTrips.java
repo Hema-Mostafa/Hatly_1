@@ -17,13 +17,18 @@ import android.widget.Toast;
 import com.example.hemamostafa.hatly_1.Adapter.MyTripsAdpter;
 import com.example.hemamostafa.hatly_1.Base.MyBaseFragment;
 import com.example.hemamostafa.hatly_1.Model.Trip;
+import com.example.hemamostafa.hatly_1.Model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -35,9 +40,9 @@ public class FragmentTrips extends MyBaseFragment {
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private MyTripsAdpter myTripsAdpter;
-
     private View view;
     private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
     ValueEventListener valueEventListener;
     ArrayList<Trip> myTripArrayList;
     public FragmentTrips() {
@@ -56,6 +61,8 @@ public class FragmentTrips extends MyBaseFragment {
         recyclerView =view.findViewById(R.id.trip_reecycler_view);
         linearLayoutManager = new LinearLayoutManager(activity); //activity = getContext()
         myTripArrayList = new ArrayList<>();
+        mAuth=FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         // addTrips();
 
@@ -68,9 +75,17 @@ public class FragmentTrips extends MyBaseFragment {
                     Trip trip = tripSnapshot.getValue(Trip.class);
                     Log.e("trip", trip.toString());
                     //Toast.makeText(activity, trip.toString(), Toast.LENGTH_SHORT).show();
-                    myTripArrayList.add(trip);
+                    if(trip.getCreator_id().equals(mAuth.getUid())){
+                        myTripArrayList.add(trip);
+                    }
+                    else
+                        continue;
 
-            }
+
+                }
+
+
+
                 recyclerView.setLayoutManager(linearLayoutManager);
                 myTripsAdpter = new MyTripsAdpter(myTripArrayList);
                 recyclerView.setAdapter(myTripsAdpter);
@@ -78,7 +93,12 @@ public class FragmentTrips extends MyBaseFragment {
                     @Override
                     public void onClick(int position, Trip trip) {
                         Toast.makeText(activity,"The card is Clicked"+ position+"",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(activity,DealsAndMatchshipments.class));
+                        Intent intent = new Intent(activity, Test.class);
+                        intent.putExtra("trip",trip);
+                        intent.putExtra("Uniqid_2","FragmentTrips");
+                        startActivity(intent);
+
+
                     }
                 });
                 myTripsAdpter.setOnArrowClickListener(new MyTripsAdpter.OnItemClickListenerInterface() {
@@ -98,12 +118,37 @@ public class FragmentTrips extends MyBaseFragment {
 
             }
         };
-
         mDatabase.addValueEventListener(valueEventListener);
 
+/*
+        FirebaseDatabase.getInstance().getReference().child("trips")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        Iterable<DataSnapshot> list = dataSnapshot.getChildren();
 
+                        // Getting current user Id
+                        String uid = mAuth.getUid();
 
+                        // Filter User
+                        ArrayList<Trip> tripArrayListFilteration = new ArrayList<>();
+                        for (DataSnapshot dataSnapshot1 : list) {
+                            if (!dataSnapshot1.getKey().equals(uid)) {
+                                tripArrayListFilteration.add(dataSnapshot1.getValue(Trip.class));
+                            }
+                        }
 
+                        // Setting data
+                        mBaseRecyclerAdapter.setItems(tripArrayListFilteration);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+*/
 
         return view;
     }

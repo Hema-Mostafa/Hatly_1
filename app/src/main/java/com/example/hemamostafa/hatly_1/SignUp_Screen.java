@@ -46,6 +46,9 @@ public class SignUp_Screen extends MyBaseActivity implements View.OnClickListene
         checkBox = findViewById(R.id.checkBox);
         backLoginTextView = findViewById(R.id.backToLogin);
         signup_btn=findViewById(R.id.signBtn);
+        signup_btn.setOnClickListener(this);
+        backLoginTextView.setOnClickListener(this);
+
 
 
     }
@@ -87,17 +90,12 @@ public class SignUp_Screen extends MyBaseActivity implements View.OnClickListene
         }
 
         if(checkBox.isChecked()){
-
-
+            checkBox.setError(null);
         }
         else {
             checkBox.setError("check box");
             return false;
         }
-
-
-
-
         return  true;
 
     }
@@ -111,18 +109,19 @@ public class SignUp_Screen extends MyBaseActivity implements View.OnClickListene
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
+                            String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                            User user = new User(stringName, stringPassword, stringMail);
+                            User user = new User(user_id,stringName,stringMail,stringPassword,"","","","");
 
-
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            FirebaseDatabase.getInstance().getReference("users")
+                                    .child(user_id)
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     //progressBar.setVisibility(View.GONE);
                                     if (task.isSuccessful()) {
                                         Toast.makeText(activity, getString(R.string.registration_success), Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(SignUp_Screen.this, MyNewHome.class));
                                     } else {
                                         Toast.makeText(activity, "Regestration  Failed ", Toast.LENGTH_SHORT).show();
                                         //display a failure message
@@ -141,6 +140,7 @@ public class SignUp_Screen extends MyBaseActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.signBtn:
+                Toast.makeText(activity," button Is Clicked",Toast.LENGTH_SHORT).show();
                 if (validateData()){
                     registerUsers();
                 }

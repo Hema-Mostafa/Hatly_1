@@ -11,15 +11,11 @@ public class User {
     String user_rate;
     String user_city;
 
-    public User(String name , String password , String mail ){
-        this.user_name = name;
-        this.user_mail = mail;
-        this.user_password = password;
-
+    public User() {
     }
+
     public User(String user_id, String user_name, String user_mail,
                 String user_password, String user_phone, String user_photo, String user_rate, String user_city) {
-        this.user_id = user_id;
         this.user_name = user_name;
         this.user_mail = user_mail;
         this.user_password = user_password;
@@ -27,6 +23,7 @@ public class User {
         this.user_photo = user_photo;
         this.user_rate = user_rate;
         this.user_city = user_city;
+        this.user_id = user_id;
     }
 
     public String getUser_id() {
